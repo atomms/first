@@ -29,7 +29,7 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        openApp();
+        openAppE();
 
 
         //implements and starts animation
@@ -38,7 +38,7 @@ public class Splash extends AppCompatActivity {
 
         //creamos un objeto animación que incorpora la animación descrita en el xml y con el método
         // startAnimation lo aplicamos al imageview del logo
-        Animation myanim = AnimationUtils.loadAnimation(this, R.anim.blink);
+        Animation myanim = AnimationUtils.loadAnimation(this, R.anim.shake);
         thunder.startAnimation(myanim);
 
 
@@ -69,13 +69,22 @@ public class Splash extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-
-
-
             }
         }, 5000);
 
 
+    }
+
+
+    private void openAppE() {
+        // Crear un handler en el hilo principal para evitar fugas de memoria
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            Intent intent = new Intent(Splash.this, Login.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish(); // Finalizar la actividad de Splash
+        }, 5000);
     }
 
 }

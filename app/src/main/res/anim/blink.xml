@@ -67,9 +67,9 @@
         <!--        android:interpolator="@android:anim/accelerate_interpolator"> -->
 
         <alpha
-            android:duration="100"
+            android:duration="50"
             android:fillAfter="true"
-            android:fromAlpha="0.0"
+            android:fromAlpha="0.7"
             android:repeatCount="infinite"
             android:repeatMode="reverse"
             android:toAlpha="1.0" />
