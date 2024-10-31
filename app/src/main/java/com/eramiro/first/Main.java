@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -214,6 +215,8 @@ public class Main extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+//        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)
+//                item.getMenuInfo();
 
         switch (item.getItemId()) {
             case R.id.item1:
