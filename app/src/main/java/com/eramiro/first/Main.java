@@ -46,7 +46,7 @@ public class Main extends AppCompatActivity {
         // casting a la vista a la que aplicamos un menu contextual
         // y la registramos
 
-        WebView mycontext = (WebView) findViewById(R.id.vistaweb);
+        WebView mycontext = findViewById(R.id.vistaweb);
         registerForContextMenu(mycontext);
 
 
@@ -145,15 +145,30 @@ public class Main extends AppCompatActivity {
             mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            Toast toast0 = Toast.makeText(Main.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
-            toast0.show();
+//            Toast toast0 = Toast.makeText(Main.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
+//            toast0.show();
+
+            final ConstraintLayout mLayout = findViewById(R.id.myMainConstraint);
+//
+            Snackbar snackbar = Snackbar
+                    .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_SHORT)
+                    .setAction("UNDO", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
+                            snackbar1.show();
+                        }
+                    });
+
+            snackbar.show();
+
             miVisorWeb.reload();
             swipeLayout.setRefreshing(false);
         }
     };
 
 
-    //implementing ActionBar/AppBar menu
+    // IMPLEMENTING APPBAR MENU
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -194,23 +209,17 @@ public class Main extends AppCompatActivity {
         if (id == R.id.item5) {
             showAlertDialogButtonClicked(Main.this);
         }
-
         return super.onOptionsItemSelected(item);
     }
 
 
-    // implementing context menu
 
-//    @Override
-//    public void onCreateContextMenu(ContextMenu menu, View v,
-//                                    ContextMenu.ContextMenuInfo menuInfo) {
+// IMPLEMENTING CONTEXT MENU
 
-
+    @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
-
         getMenuInflater().inflate(R.menu.menu_context, menu);
-
     }
 
     @Override
@@ -223,32 +232,16 @@ public class Main extends AppCompatActivity {
                 Toast toast = Toast.makeText(this, "Item copied",
                         Toast.LENGTH_LONG);
                 toast.show();
-
-//                final ConstraintLayout mLayout = findViewById(R.id.myMainConstraint);
-//
-//                Snackbar snackbar = Snackbar
-//                        .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_LONG)
-//                        .setAction("UNDO", new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View view) {
-//                                Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
-//                                snackbar1.show();
-//                            }
-//                        });
-//
-//                snackbar.show();
-
                 return true;
-
             case R.id.item2:
                 Toast toast2 = Toast.makeText(this, "Downloading item...",
                         Toast.LENGTH_LONG);
                 toast2.show();
                 return true;
-
             default:
 //                return super.onContextItemSelected(item);
                 return false;
+
         }
 
     }

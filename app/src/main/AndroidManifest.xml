@@ -16,6 +16,10 @@
             android:exported="true" />
 
         <activity
+            android:name=".Help"
+            android:exported="true" />
+
+        <activity
             android:name=".Splash"
             android:exported="true"
             android:screenOrientation="portrait">
