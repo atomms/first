@@ -41,8 +41,6 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.transparent));
-
-
         // casting a la vista a la que aplicamos un menu contextual
         // y la registramos
 
@@ -53,7 +51,7 @@ public class Main extends AppCompatActivity {
         // DENTRO del Oncreate
         // cast al Layout SwipeRefresh con el que rodeamos la vista
         // en el xml y le colocamos un listener
-        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
+        swipeLayout = findViewById(R.id.myswipe);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
 
         //La vista dentro es un webview con permiso para zoom
@@ -65,14 +63,7 @@ public class Main extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         miVisorWeb.loadUrl("https://thispersondoesnotexist.com");
 
-
-        // DENTRO del Oncreate
-        // cast al Layout SwipeRefresh con el que rodeamos la vista
-        // en el xml y le colocamos un listener
-        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
-        swipeLayout.setOnRefreshListener(mOnRefreshListener);
-
-    }
+            }
 
 // DIALOGO MODAL
 
@@ -90,10 +81,10 @@ public class Main extends AppCompatActivity {
         builder.setTitle("Achtung!");
         builder.setMessage("Where do you go?");
         builder.setIcon(R.drawable.usericon);
-        builder.setCancelable(false);
+        builder.setCancelable(true);
 
-        // un XML a medida para el diálogo
-        builder.setView(getLayoutInflater().inflate(R.layout.alertdialog_view, null));
+//        // un XML a medida para el diálogo
+//        builder.setView(getLayoutInflater().inflate(R.layout.alertdialog_view, null));
 
         // add the buttons
         builder.setPositiveButton("Scrolling", new DialogInterface.OnClickListener() {
@@ -102,21 +93,21 @@ public class Main extends AppCompatActivity {
                 // do something like...
                 Intent intent = new Intent(Main.this, ScrollingActivity.class);
                 startActivity(intent);
-                dialog.dismiss();
+//                dialog.dismiss();
 
             }
         });
-
+//
         builder.setNegativeButton("Do nothing", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                 // do something like...
 
-                dialog.dismiss();
+//                dialog.dismiss();
             }
         });
-
+//
         builder.setNeutralButton("Other", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -124,7 +115,7 @@ public class Main extends AppCompatActivity {
                 // do something like...
                 System.exit(0);
 
-                dialog.dismiss();
+//                dialog.dismiss();
             }
         });
 
