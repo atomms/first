@@ -5,13 +5,13 @@
     <item
         android:id="@+id/item2"
         android:title="Settings"
-        android:icon="@drawable/key"
-        app:showAsAction="ifRoom" />
+        android:icon="@drawable/ic_planet"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/item1"
         android:title="Copy"
-        android:icon="@drawable/corona24"
+        android:icon="@drawable/key"
         app:showAsAction="ifRoom">
 
         <menu>
