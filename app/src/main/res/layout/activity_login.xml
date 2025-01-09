@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:alpha="0.6"
             android:background="@color/white"
-            android:hint="Username"></EditText>
+            android:hint="@string/username"></EditText>
 
     </com.google.android.material.textfield.TextInputLayout>
 

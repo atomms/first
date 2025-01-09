@@ -19,6 +19,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Contenido principal -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator"
         android:layout_width="match_parent"
@@ -26,6 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottom_app_bar"
@@ -35,7 +43,8 @@
             app:fabAlignmentMode="center"
             app:menu="@menu/bottom_app_bar_menu"
             app:navigationIcon="@drawable/ic_burger"
-                        />
+
+            />
 
         <!--            style="@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface"-->
 
@@ -47,8 +56,7 @@
             android:src="@drawable/ic_add"
             app:fabSize="normal"
             app:layout_anchor="@+id/bottom_app_bar"
-            app:tint="@android:color/white"
-            />
+            app:tint="@android:color/white" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
