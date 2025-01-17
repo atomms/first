@@ -218,6 +218,7 @@ public class Main extends AppCompatActivity {
 //        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)
 //                item.getMenuInfo();
 
+
         switch (item.getItemId()) {
             case R.id.item1:
                 Toast toast = Toast.makeText(this, "Item copied",

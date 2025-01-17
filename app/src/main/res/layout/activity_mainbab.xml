@@ -43,8 +43,7 @@
             app:fabAlignmentMode="center"
             app:menu="@menu/bottom_app_bar_menu"
             app:navigationIcon="@drawable/ic_burger"
-
-            />
+                        />
 
         <!--            style="@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface"-->
 
