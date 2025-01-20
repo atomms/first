@@ -3,14 +3,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 34
     namespace 'com.eramiro.first'
 
 
     defaultConfig {
         applicationId "com.eramiro.first"
         minSdk 21
-        targetSdk 31
+        targetSdkVersion defaultTargetSdkVersion
         versionCode 1
         versionName "1.0"
 

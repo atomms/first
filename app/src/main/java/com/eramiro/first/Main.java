@@ -63,7 +63,7 @@ public class Main extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         miVisorWeb.loadUrl("https://thispersondoesnotexist.com");
 
-            }
+    }
 
 // DIALOGO MODAL
 
@@ -204,7 +204,6 @@ public class Main extends AppCompatActivity {
     }
 
 
-
 // IMPLEMENTING CONTEXT MENU
 
     @Override
@@ -217,24 +216,15 @@ public class Main extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
 //        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)
 //                item.getMenuInfo();
-
-
-        switch (item.getItemId()) {
-            case R.id.item1:
-                Toast toast = Toast.makeText(this, "Item copied",
-                        Toast.LENGTH_LONG);
-                toast.show();
-                return true;
-            case R.id.item2:
-                Toast toast2 = Toast.makeText(this, "Downloading item...",
-                        Toast.LENGTH_LONG);
-                toast2.show();
-                return true;
-            default:
-//                return super.onContextItemSelected(item);
-                return false;
-
+        if (item.getItemId() == R.id.item1) {
+            Toast toast = Toast.makeText(this, "Item copied",
+                    Toast.LENGTH_LONG);
+            toast.show();
+        } else if (item.getItemId() == R.id.item2) {
+            Toast toast2 = Toast.makeText(this, "Downloading item...",
+                    Toast.LENGTH_LONG);
+            toast2.show();
         }
-
+        return false;
     }
 }

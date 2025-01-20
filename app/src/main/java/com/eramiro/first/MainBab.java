@@ -66,13 +66,11 @@ public class MainBab extends AppCompatActivity {
         bottomAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.heart:
-                        Toast.makeText(MainBab.this, "Added to favourites", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.search:
-                        Toast.makeText(MainBab.this, "Beginning search", Toast.LENGTH_SHORT).show();
-                        break;
+
+                if (item.getItemId() == R.id.heart) {
+                    Toast.makeText(MainBab.this, "Added to favourites", Toast.LENGTH_SHORT).show();
+                } else if (item.getItemId() == R.id.search) {
+                    Toast.makeText(MainBab.this, "Beginning search", Toast.LENGTH_SHORT).show();
                 }
                 return false;
             }
