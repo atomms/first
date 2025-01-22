@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainBn extends AppCompatActivity {
 
-//    private ActivityMainBnBinding binding;
+    //    private ActivityMainBnBinding binding;
     private MenuItem prevMenuItem;
     private SectionsPagerAdapter sectionsPagerAdapter;
 
@@ -63,6 +63,7 @@ public class MainBn extends AppCompatActivity {
                 .inflate(R.layout.layout_badge, itemView, true);
 
 
+        //here we listen to navigation across menu items and set the pager and the icon state checked
         mybottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -71,28 +72,28 @@ public class MainBn extends AppCompatActivity {
                     case R.id.likes:
                         item.setChecked(true);
                         Toast.makeText(MainBn.this, "Likes clicked.", Toast.LENGTH_SHORT).show();
-                        removeBadge(mybottomNavView,item.getItemId());
+                        removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(0);
                         break;
 
                     case R.id.add:
                         item.setChecked(true);
                         Toast.makeText(MainBn.this, "Add clicked.", Toast.LENGTH_SHORT).show();
-                        removeBadge(mybottomNavView,item.getItemId());
+                        removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(1);
                         break;
 
                     case R.id.browse:
                         item.setChecked(true);
                         Toast.makeText(MainBn.this, "Browse clicked.", Toast.LENGTH_SHORT).show();
-                        removeBadge(mybottomNavView,item.getItemId());
+                        removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(2);
                         break;
 
                     case R.id.personal:
                         item.setChecked(true);
                         Toast.makeText(MainBn.this, "Personal clicked.", Toast.LENGTH_SHORT).show();
-                        removeBadge(mybottomNavView,item.getItemId());
+                        removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(3);
                         break;
 
@@ -115,7 +116,7 @@ public class MainBn extends AppCompatActivity {
                 if (prevMenuItem != null) {
                     prevMenuItem.setChecked(false);
                 } else {
-                    mybottomNavView.getMenu().getItem(0).setChecked(false);
+//                    mybottomNavView.getMenu().getItem(position).setChecked(false);
                     mybottomNavView.getMenu().getItem(position).setChecked(true);
                     removeBadge(mybottomNavView, mybottomNavView.getMenu().getItem(position).getItemId());
                 }
@@ -143,4 +144,4 @@ public class MainBn extends AppCompatActivity {
         }
     }
 
-    }
+}
