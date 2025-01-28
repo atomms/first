@@ -85,11 +85,11 @@ public class MainBn extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if (prevMenuItem != null) {
-                    prevMenuItem.setChecked(false);
-                } else {
-                    mybottomNavView.getMenu().getItem(0).setChecked(false);
-                }
+//                if (prevMenuItem != null) {
+//                    prevMenuItem.setChecked(false);
+//                } else {
+//                    mybottomNavView.getMenu().getItem(0).setChecked(false);
+//                }
                 mybottomNavView.getMenu().getItem(position).setChecked(true);
                 removeBadge(mybottomNavView, mybottomNavView.getMenu().getItem(position).getItemId());
             }
@@ -109,6 +109,7 @@ public class MainBn extends AppCompatActivity {
      */
     public static void removeBadge(BottomNavigationView bottomNavigationView, @IdRes int itemId) {
         BottomNavigationItemView itemView = bottomNavigationView.findViewById(itemId);
+
         if (itemView.getChildCount() == 3) {
             itemView.removeViewAt(2);
         }
