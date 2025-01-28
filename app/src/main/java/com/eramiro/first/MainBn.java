@@ -17,6 +17,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * gradle update
+ */
 public class MainBn extends AppCompatActivity {
 
     private ActivityMainBnBinding binding;
