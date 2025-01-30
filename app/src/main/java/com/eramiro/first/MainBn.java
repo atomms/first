@@ -16,6 +16,7 @@ import com.eramiro.first.databinding.ActivityMainBnBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 /**
  * gradle update
@@ -37,6 +38,16 @@ public class MainBn extends AppCompatActivity {
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager1 = findViewById(R.id.view_pager);
         viewPager1.setAdapter(sectionsPagerAdapter);
+
+
+        // ... inside your Activity or Fragment ...
+
+        DotsIndicator dotsIndicator = findViewById(R.id.dots_indicator);
+//        ViewPager viewPager = findViewById(R.id.view_pager);
+//        ViewPagerAdapter adapter = new ViewPagerAdapter();
+//        viewPager.setAdapter(adapter);
+        dotsIndicator.attachTo(viewPager1);
+
 
         // Configuración de la barra de navegación inferior
         BottomNavigationView mybottomNavView = findViewById(R.id.bottom_navigation);
