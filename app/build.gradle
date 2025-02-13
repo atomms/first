@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 35
     namespace 'com.eramiro.first'
 
 
@@ -54,6 +54,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.activity:activity:1.10.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -64,6 +65,11 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 
     implementation("com.tbuonomo:dotsindicator:5.1.0")
+
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+
 
 //    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 //    implementation 'com.alespero:expandable-cardview:0.8'
